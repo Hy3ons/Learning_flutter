@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
 class StartScene extends StatelessWidget {
-  const StartScene({super.key});
+  const StartScene(this.startQuiz, {super.key});
 
-  void clickButton() {
-    //pass
-  }
+  final void Function() startQuiz;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +11,6 @@ class StartScene extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          //
           Image.asset('assets/images/quiz_logo.png', width: 300),
 
           const SizedBox(height: 60),
@@ -26,7 +23,7 @@ class StartScene extends StatelessWidget {
           const SizedBox(height: 50),
 
           OutlinedButton.icon(
-            onPressed: clickButton,
+            onPressed: startQuiz,
             style: OutlinedButton.styleFrom(
               foregroundColor: Color.fromARGB(253, 134, 0, 161),
             ),

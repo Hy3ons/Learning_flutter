@@ -60,13 +60,13 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     return widgetList;
   }
 
-  var currentQuestionIndex = 0;
+  int currentQuestionIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     final QuizQuestion currentQuestion = questions[currentQuestionIndex];
 
-    // List<Widget> widgetList = getButtonWidgets(quizNumber: 0);
+    // List<Widget> widgetList = getButtonWidgets(quizNumber: currentQuestionsIndex);
 
     return SizedBox(
       width: double.infinity,
@@ -94,7 +94,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             // 내가 사용한 방법, widget list를 만들어서, 미리 버튼 위젯에 값들을 할당한 뒤,
             // 후에 재배치
             // ...widgetList,
-            ...currentQuestion.getShuffledAnswers().map((String answer) {
+            ...currentQuestion.shuffledAnswers.map((String answer) {
               return AnswerButton(
                 clickHandle: () {
                   clickedAnswer(answer);

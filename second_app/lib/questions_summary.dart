@@ -19,6 +19,8 @@ class QuestionsSummary extends StatelessWidget {
 
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+
               children: [
                 CircleAvatar(
                   radius: 20, //
